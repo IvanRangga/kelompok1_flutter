@@ -21,7 +21,7 @@ class IntroductionView extends GetView<IntroductionController> {
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
-            color: AppOrange,
+            color: Get.isDarkMode ? AppOrangeLight1 : AppWhite,
           ),
         ),
         SizedBox(height: 20),
@@ -33,24 +33,35 @@ class IntroductionView extends GetView<IntroductionController> {
             "sempatkanlah waktu luangmu untuk membuka dan mempelajari kitab suci Al - Qur'an",
             style: TextStyle(
               fontSize: 16,
-              color: Color.fromARGB(255, 225, 38, 28),
+              color: Get.isDarkMode ? AppOrangeLight2 : AppOrangeLight2,
             ),
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 30),
         // ignore: sized_box_for_whitespace
-        Container(
+        ClipRRect(
+          borderRadius: BorderRadius.circular (360),
+        child: Container(
           width: 250,
           height: 250,
           child: Lottie.asset("assets/lottie/lf30_editor_gf1sbubh.json"),
         ),
+            ),
         SizedBox(height: 30),
         ElevatedButton(
           onPressed: () => Get.offAllNamed(Routes.HOME),
-          child: Text("Mulai"),
+          child: Text("Mulai", style: TextStyle(
+            color: Get.isDarkMode ? AppOrangeDark1 : AppOrangeLight1 ,
+          ),),
           style: ElevatedButton.styleFrom(
-            primary: AppOrange,
+            primary: Get.isDarkMode ? AppWhite : AppWhite,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: 50, vertical: 10,
+            )
           ),
         ),
       ],
