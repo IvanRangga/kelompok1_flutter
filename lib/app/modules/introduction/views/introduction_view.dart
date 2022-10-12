@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kelompok1_flutter/app/contants/color.dart';
 import 'package:lottie/lottie.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/introduction_controller.dart';
@@ -16,10 +17,11 @@ class IntroductionView extends GetView<IntroductionController> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Al-Quran Apps",
+          "Al-Quran Terjemah dan Tafsiran",
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
+            color: AppOrange,
           ),
         ),
         SizedBox(height: 20),
@@ -28,9 +30,10 @@ class IntroductionView extends GetView<IntroductionController> {
             horizontal: 50,
           ),
           child: Text(
-            "Sesibuk itukah kamu hingga sampai lupa membaca Al-Quran",
+            "sempatkanlah waktu luangmu untuk membuka dan mempelajari kitab suci Al - Qur'an",
             style: TextStyle(
               fontSize: 16,
+              color: Color.fromARGB(255, 225, 38, 28),
             ),
             textAlign: TextAlign.center,
           ),
@@ -40,12 +43,15 @@ class IntroductionView extends GetView<IntroductionController> {
         Container(
           width: 250,
           height: 250,
-          child: Lottie.asset("assets/lottie/animasi-quran.json"),
+          child: Lottie.asset("assets/lottie/lf30_editor_gf1sbubh.json"),
         ),
         SizedBox(height: 30),
         ElevatedButton(
           onPressed: () => Get.offAllNamed(Routes.HOME),
           child: Text("Mulai"),
+          style: ElevatedButton.styleFrom(
+            primary: AppOrange,
+          ),
         ),
       ],
     )));
